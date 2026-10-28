@@ -1,0 +1,325 @@
+<!DOCTYPE html>
+<html lang="es"> 
+<head> 
+    <meta charset="UTF-8">
+    <title>CV IMPERFECTO</title>
+    <style>
+        body {
+            font-family: 'Lucida Grande', Geneva, Verdana, sans-serif;
+            margin: 0px auto; 
+            background-color: beige;          
+        }
+
+        .portada {
+            font-family: 'Lucida Grande', Geneva, Verdana, sans-serif;
+            background: #002b63;
+            text-align: center;
+            padding: 80px;
+        }
+
+        .grande {
+            font-size: 80px;
+        }
+          
+         h1 {     
+            color: #fcffff;
+            text-align: center;
+        }    
+        
+        .portada-texto {
+            color: beige;
+            text-align: center;
+            padding: 50px;
+            font-size: 20px;
+        }
+        
+        /* Botón para mostrar la tabla de índice */
+        #Indice {     
+            color: #002b63;
+            text-align: center;
+            padding: 10px;
+            border-radius: 20px;
+            border: none;
+            font-weight: bold;
+            font-size: 16px;
+            
+        }
+
+        table {
+            margin: 30px auto;
+            background-color: white;
+            color: #023E8A; 
+            border-collapse: collapse;
+            border: none; 
+            border-radius: 12px; 
+            overflow: hidden; 
+            font-size: 15px;
+            box-shadow: 0 4px 10px rgba(0,0,0,0.2);
+        }
+
+        th {
+            background: #cde0fb;
+            padding: 10px;
+            border: 1px solid white;
+            color: #023E8A;
+        }
+        td {
+            padding: 10px;
+            border: 1px solid white;
+        }
+
+        .perfil {            
+            background: #c0d9ff;
+            padding: 50px 80px;
+            max-width: 900px;
+            margin: 80px auto;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.15);
+            display: flex; 
+            gap: 80px;
+            align-items: center;
+            border-radius: 20px;
+        }
+
+        .perfil-foto img {
+             width: 200px;
+             height: 200px;
+             object-fit: cover;
+             border-radius: 15px;
+         }
+
+
+        .perfil-foto {
+            width: 200px;
+            flex-shrink: 0; /* Evita que la foto se reduzca */
+        }
+
+        .perfil h2 {
+            color: #002b63;
+            margin-bottom: 20px;
+        }
+        /*-----------------*/
+        .reflexion {
+            background: #b3beff;
+            padding: 50px 80px;
+            max-width: 900px;
+            margin: 80px auto;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.15); 
+            gap: 80px;
+            align-items: center;
+            border-radius: 20px;
+            
+        } 
+        .reflexion h2 {
+            color: #002b63;
+        }
+        
+        .bloques-reflex {
+            display: flex;
+            gap: 40px;
+            margin-top: 50px;            
+        }
+
+       .competencias, .objetivos, .descubrimiento {
+            background: beige; 
+            padding: 20px;
+            border-radius: 15px;
+            flex: 1;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+            line-height: 1.5;
+        }
+
+        .descubrimiento {
+            margin-top: 40px;
+            flex: none; /* para que sea ancha abajo */
+            width: 100%;
+            box-sizing: border-box;
+            margin-bottom: 50px;
+        }
+
+        .equilibrio {
+           margin: 40px 0px;
+           
+        }
+        .equilibrio ul {
+            padding-left: 50px;
+            line-height: 1.5;
+            padding-top: 20px;
+        }
+        .equilibrio p {
+           padding-top: 20px;
+        }
+
+    </style>
+</head>
+<body> 
+
+<!--Portada -->
+<div class="portada">
+    <h1>BIENVENIDO A</h1>
+    <h1 class="grande">MI CV IMPERFECTO</h1>
+    
+    <p class="portada-texto">Hola, mi nombre es Delia y el objetivo de esta pagina no es
+        solo mostrarte lo que ya tengo, sino lo que estoy 
+        construyendo.</p>
+        
+   
+     <div>
+    <button id="Indice">¿Qué verás?</button>
+     </div>
+    
+<!-- le pongo un identificador a mi boton y uso display:none para que la tabla permanezca
+ oculta -->    
+    <table id="tabla-indice" border="1" style="display:none;">
+        <tr>
+            <th>SECCIÓN</th>
+            <th>CONTENIDO</th>
+        </tr>
+        <tr>
+            <td>Perfil Profesional</td>
+            <td>Breve presentación y habilidades</td>
+        </tr>
+        <tr>
+            <td>Reflexión</td>
+            <td>
+                <ul>
+                    <li>Lo que eh descubierto</li>
+                    <li>Competencias por desarrollar</li>
+                    <li>Objetivos</li>
+                </ul>
+            </td>
+        </tr>
+        <tr>
+            <td>Equilibrio Personal</td>
+            <td>Actividades que hago para manejar el estrés</td>
+        </tr>
+    </table>
+</div>
+
+<script>
+    const botonIndice = document.getElementById("Indice");
+    const tablaIndice = document.getElementById("tabla-indice");
+    botonIndice.addEventListener("click", function() {
+        if (tablaIndice.style.display === "none") {
+            tablaIndice.style.display = "table";
+        } else {
+            tablaIndice.style.display = "none";
+        }
+    });
+</script>
+
+<!--Primer bloque -->
+
+<div class="perfil">
+
+    <div class="perfil-foto">  <!--este div agrupa la foto en su propia cajita-->
+        <img src="yo.jpeg" alt="Foto de mi">
+    </div>
+
+    <div> <!--inserto un div solito para agrupar el texto de mi perfil en una cajita-->
+        <h2>PERFIL PROFESIONAL</h2>
+        <p class="texto-perfil">Mi nombre es Delia Romero Regalado, tengo 20 años y estoy 
+        cursando el 8to ciclo de la carrera de Derecho.</p>
+        <p class="texto-perfil">Tengo interés en desarrollarme en la rama del Derecho Civil 
+        y el Derecho Laboral.</p>
+        <br>    
+        <h2>HABILIDADES DESTACADAS</h2>
+        <ul>
+            <li>Atención al detalle en redaccion jurídica</li>
+            <br>
+            <li>Análisis jurídico y argumentación</li>
+            <br>
+            <li>Resolución de problemas</li>
+            <br>   
+            <li>Trabajo en equipo</li>
+        </ul>
+    </div>
+</div>
+
+    <!--Segundo bloque -->
+<div class="reflexion">
+        <br>
+        <h2 class="texto-reflexion">REFLEXIÓN</h2>
+        <p>Desde el ciclo 2025-2 hasta la mitad del ciclo 2026-2 he afrontado ciertos desafíos 
+            para mejorar mis habilidades y nutrir mi currículum académico. Este proceso me 
+            permitió identificar mis intereses, los aspectos que debo seguir trabajando y una 
+            nueva perspectiva de mi vida academica.</p>
+
+    <div class="bloques-reflex">
+    
+            <div class="competencias">
+                <h2>Competencias por desarrollar</h2>
+
+                <ul>
+                <li><b>Aspectos a desarrollar:</b> 
+                    
+                    <ul>
+                        <li>Ofimática: Manejo de Microsoft Office (Word, Excel, PowerPoint) y actualmente 
+                            estoyaprendiendo mecanografía para mejorar mi velocidad de redacción.</li>
+                            <br>
+                        <li>Plataformas jurídicas: Reforzar el manejo de SPIJ, SUNARP, y la consulta de expedientes en el CEJ.</li> 
+                    </ul>
+                    <br>
+                    
+                <li><b>Habilidades por pulir:</b> Redacción jurídica, capacidad de análisis, 
+                    litigación oral, Inglés (nivel intermedio)</li>
+                </ul>
+            </div>
+    
+            <div class="objetivos">
+                <h2>Objetivos</h2>
+                <ul>
+                <li><b>Informe academico:</b> Estoy trabajando junto con un compañero un trabajo 
+                    de investigacion, que si bien es parte del examen final del curso de Conflictos 
+                    Ambientales, tenemos el objetivo de que que dicho articulo se pueda publicar en 
+                    una revista academica.</li>
+                    <br>
+                <li><b>Reducir procrastinación:</b> No voy a negar su existencia pero tampoco voy 
+                    a dejar que se expanda. </li> 
+                </ul>
+            </div>
+    </div>      <!-- fin de bloque-reflex -->
+
+    <div class="descubrimiento">
+        <h2>Lo que eh descubierto</h2>
+        <ul>
+        <li><b>Mi área de interes:</b> He analizado los cursos en los que mejor
+            me ha ido y los que más me han gustado, y llegué a la conclusión 
+            de que en el futuro me gustaría aventurarme en lo que es el 
+            Derecho Civil, específicamente en Derecho de Contratos, y en 
+            Derecho Laboral.</li>
+            <br>
+        <li><b>Nueva perspectiva</b> Comprendí que cada estudiante tiene su propio proceso. 
+            He aprendido a no compararme con los tiempos estándar y a priorizar una formación 
+            sólida por sobre una culminación apresurada.</li>
+            <br>
+        <li><b>Habilidades:</b> Este año encontre ciertos defectos mios que debo reducir, 
+            como la procrastinacion, y ciertas habilidades que debo construir como el manejo 
+            de herramientas ofimaticas y plataformas judiciales. Asi mismo, aspectos que debo
+            mejorar más, como la redaccion de escritos, mi capacidad analítica, y litigacion 
+            oral.</li>
+        </ul>
+    </div>
+
+
+
+    <div class="equilibrio"> <!--Tercer bloque -->
+        <h2>EQUILIBRIO PERSONAL</h2>
+        <p>Aveces la carga academica puede abrumarme o causar estres. Para lidiar con ello
+                y seguir rindiendo, eh encontrado ciertas actividades que me ayudan a relajarme
+                y a mantener un equilibrio entre mi vida personal y acadmica. Entre ellas se 
+                encuentran:</p>
+
+        <ul>
+            <li><b>Deporte:</b> Siempre me ha gustado hacer deporte. He probado atletismo y futbol, pero
+                actualmente disfruto más jugar voleyball. Me ayuda a liberar tensiones y a mantenerme activa.</li>
+            <li><b>Música:</b> Escuchar música me ayuda a cambiar mi estado animico y a relajarme después de un día 
+                cargado.</li>
+            <li><b>Jugar videojuegos:</b> Usualmente juego con amigos para abrir un espacio de diversion y bajar el
+                estres. </li>
+            <li><b>Ver anime:</b> Recurro al anime para salir de lo rutinario.</li>
+        
+        </ul>
+    </div>
+</div>
+</body>
+</html>   
